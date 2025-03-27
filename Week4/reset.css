@@ -1,0 +1,68 @@
+/* { */
+/*color: hsl(160, 100%, 75%);*/
+
+/* CMD/ */
+body {
+    background-color: rgba(104, 108, 224, 0.201);
+    font-size: 1.1rem;
+  }
+  
+  h1 {
+    color: brown;
+    font-size: 5rem;
+    text-transform: uppercase;
+  }
+  
+  h2,
+  h3 {
+    color: rgb(216, 128, 21);
+  }
+  
+  /* h3 {
+    color: rgb(216, 128, 21);
+  } */
+  p {
+    color: rgb(26, 131, 131);
+  }
+  .blue-color {
+    color: rgb(59, 59, 182);
+  }
+  .brown-color {
+    color: rgb(100, 63, 63);
+  }
+  #outcome {
+    color: rgb(102, 25, 173);
+  }
+  #outcome {
+    color: rgb(43, 43, 114);
+    border: 1px solid rgba(145, 37, 37, 0.787);
+  }
+  section {
+    text-align: center;
+    border: 4px dashed rgba(182, 76, 76, 0.441);
+  }
+  /* li{color: blueviolet;} */
+  /* h1 {
+      color: brown;
+    }
+    h2 {
+      color: rgb(187, 137, 75);
+    }
+    h3 {
+      color: rgb(216, 128, 21);
+    }
+    p {
+      color: rgb(26, 131, 131);
+    } */
+  /*
+  curly braces {} - grouping
+  square brackets [] - js
+  round brackets () - js
+  parantheses < > - html
+  semicolon ; to end a line
+  colon : property declaration
+  syntax : rules of a lang
+  hyphen - to connect words
+  back slash/
+  forword slash\
+  */
