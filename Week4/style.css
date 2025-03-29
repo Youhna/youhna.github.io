@@ -1,56 +1,54 @@
-body{
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 0 auto;
-    /*horizontal centering*/
+body {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+  /*horizontal centering*/
 }
 h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
-p{
-    width: 400px;
-    /*border: 1px solid salmon;*/
-    margin: 0 auto;
-   min-height: 200px;
-   padding: 40px 20px 30px 10px;
-   margin-bottom: 20px;
-   /*line-height: 200px;*/
-   border-bottom: 3px dashed rgb(164, 145, 184);
-   background-color: rgb(225, 215, 202);
-
+p {
+  width: 400px;
+  /*border: 1px solid salmon;*/
+  margin: 0 auto;
+  min-height: 200px;
+  padding: 40px 20px 30px 10px;
+  margin-bottom: 20px;
+  /*line-height: 200px;*/
+  border-bottom: 3px dashed rgb(164, 145, 184);
+  background-color: rgb(225, 215, 202);
 }
-.vcenter{
-    line-height: 160px;
-    /*height- top padding - bottom padding;*/
-    /*200 - 20 - 20=160*/
+.vcenter {
+  line-height: 160px;
+  /*height- top padding - bottom padding;*/
+  /*200 - 20 - 20=160*/
 }
-span{
-    color: rgb(46, 75, 75);
-   display: block;
+span {
+  color: rgb(46, 75, 75);
+  display: block;
 }
-.blue-color{
-    display: inline;
-    color: rgb(70, 120, 120);
+.blue-color {
+  display: inline;
+  color: rgb(70, 120, 120);
 }
 ul {
-    margin: 0;
-    padding: 0;
-    min-height: 8px;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-    justify-content: center;
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
-  }
-  li {
-    /* flex: 1; */
-    background-color: #e1bcaa;
-    /* flex-grow: 1; */
-    padding: 4px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  min-height: 8px;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+}
+li {
+  /* flex: 1; */
+  background-color: #e1bcaa;
+  /* flex-grow: 1; */
+  padding: 4px;
+}

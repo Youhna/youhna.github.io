@@ -1,0 +1,41 @@
+  
+
+  h1 {
+    color: rgb(71, 82, 144);
+    font-family: "Bytesized", sans-serif;
+    font-weight: 600;
+    font-size: 80px;
+    font-style: normal;
+    text-align: center;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    min-height: 8px;
+    list-style: none;
+    display: flex;
+    gap: 10rem;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+  }
+
+  li {
+    /* flex: 1; */
+    background-color: #5d895d;
+    /* flex-grow: 1; */
+    padding: 1%;
+    border-radius: 3px;}
+
+ .flipper{margin-top: 50px;}
+ 
+ .flip-container {
+    background-image: url(image1.png);
+    background-size: 100% 100%;
+ }
+
+  
+
+

@@ -1,0 +1,68 @@
+body {
+  height: 100vh;
+  background-color: #f3c3b2;
+  display: flex;
+  flex-direction: column; /* 让所有内容竖向排列 */
+  align-items: center; /* 水平居中 */
+  justify-content: center; /* 垂直居中 */
+  gap: 40px; /* 控制各部分间距 */
+  margin: 0;
+}
+
+/* 标题样式 */
+h1 {
+  color: #2e365a;
+  font-family: "Bytesized", sans-serif;
+  font-weight: 600;
+  font-size: 80px;
+  text-align: center;
+  margin: 0;
+}
+
+/* 让 box 们竖直排列并居中 */
+#grid-container {
+  display: flex;
+  flex-direction: column; /* 竖直排列 box */
+  align-items: center; /* 水平居中 */
+  gap: 20px; /* 控制 box 之间的间距 */
+}
+
+/* 统一 box 样式 */
+#box1,
+#box2,
+#box3,
+#box4 {
+  width: 400px;
+  height: 50px;
+  background-color: #a7ac9e;
+  border-radius: 10px;
+  display: flex; /* 使用 flexbox */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  text-align: center; /* 让多行文字也居中 */
+  height: 50px; /* 设定一个合理的高度，避免塌陷 */
+  width: 110%; /* 让 box 充满 grid 宽度 */
+  font-size: 10px; /* 适当调整字体大小 */
+  font-weight: bold; /* 让文字更突出 */
+  color: #333; /* 让文字有对比度 */
+}
+
+/* 按钮样式 */
+button {
+  background-color: #484d64;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #1a233a;
+}
