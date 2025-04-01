@@ -2,14 +2,14 @@ body {
   height: 100vh;
   background-color: #f3c3b2;
   display: flex;
-  flex-direction: column; /* 让所有内容竖向排列 */
-  align-items: center; /* 水平居中 */
-  justify-content: center; /* 垂直居中 */
-  gap: 40px; /* 控制各部分间距 */
+  flex-direction: column; /* Make all content vertically aligned */
+  align-items: center; /* horizontal centering */
+  justify-content: center; /* vertical centering */
+  gap: 40px; /* Control of spacing of components */
   margin: 0;
 }
 
-/* 标题样式 */
+/* title style */
 h1 {
   color: #2e365a;
   font-family: "Bytesized", sans-serif;
@@ -19,15 +19,15 @@ h1 {
   margin: 0;
 }
 
-/* 让 box 们竖直排列并居中 */
+/* Make the boxes vertically aligned and centred */
 #grid-container {
   display: flex;
-  flex-direction: column; /* 竖直排列 box */
-  align-items: center; /* 水平居中 */
-  gap: 20px; /* 控制 box 之间的间距 */
+  flex-direction: column; /* Vertical arrangement box */
+  align-items: center; /* horizontal centering */
+  gap: 20px; /* Control the spacing between boxes */
 }
 
-/* 统一 box 样式 */
+/* Uniform box styles */
 #box1,
 #box2,
 #box3,
@@ -36,18 +36,18 @@ h1 {
   height: 50px;
   background-color: #a7ac9e;
   border-radius: 10px;
-  display: flex; /* 使用 flexbox */
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-  text-align: center; /* 让多行文字也居中 */
-  height: 50px; /* 设定一个合理的高度，避免塌陷 */
-  width: 110%; /* 让 box 充满 grid 宽度 */
-  font-size: 10px; /* 适当调整字体大小 */
-  font-weight: bold; /* 让文字更突出 */
-  color: #333; /* 让文字有对比度 */
+  display: flex; /* use flexbox */
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  text-align: center; /* Centering multiple lines of text */
+  height: 50px; 
+  width: 110%; /* Make the box fill the grid width */
+  font-size: 10px; 
+  font-weight: bold; 
+  color: #333; /* Give text contrast */
 }
 
-/* 按钮样式 */
+/* button style */
 button {
   background-color: #484d64;
   color: white;

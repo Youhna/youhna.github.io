@@ -1,12 +1,12 @@
 h1 {
   color: #2E365A;
-  font-family: "Bytesized", sans-serif; /* 有趣的网站配上有趣的字体 */
+  font-family: "Bytesized", sans-serif; /* Interesting website with interesting fonts */
   font-weight: 600;
   font-size: 80px;
   font-style: normal;
   text-align: center;
 }
-/* 按钮样式 */
+/* Button style */
 button {
   background-color: #656c8e;
   color: white;
@@ -37,7 +37,6 @@ ul {
   justify-content: center;
   padding-bottom: 20px;
 }
-
 
 .flipper {
   margin-top: 50px;

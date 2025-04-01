@@ -1,4 +1,4 @@
-/* 确保所有翻转卡片垂直排列 从Mozilla、ChatGPT学习到的翻转模块*/
+/* Ensure all flipping cards are aligned vertically Flip Module Learned from Mozilla, ChatGPT*/
 .flip-container-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,25 +7,25 @@
   padding: 20px;
 }
 
-/* 3D 翻转容器 */
+/* 3D flip-container */
 .flip-container {
   perspective: 1000px;
-  width: 700px; /* 固定大小，防止变形 */
+  width: 700px;
   height: 400px;
   position: relative;
 }
 
-/* 统一翻转核心 */
+/* Unified Flip Core */
 .flipper {
   width: 100%;
   height: 100%;
-  transition: transform 0.8s ease-in-out; /* 鼠标移动翻转 */
+  transition: transform 0.8s ease-in-out; /* Mouseover Flip */
   transform-style: preserve-3d;
   transform-origin: center;
   position: relative;
 }
 
-/* 正反面共用样式 */
+/* Common style for front and back */
 .front,
 .back {
   position: absolute;
@@ -41,10 +41,10 @@
   font-size: 19px;
   background-size: cover;
   background-position: center;
-  box-sizing: border-box; /* 确保 padding 不会撑开元素 */
+  box-sizing: border-box; /* Ensure that padding does not stretch the element */
 }
 
-/* 确保前后完全一致 */
+/* Ensure complete consistency */
 .front {
   padding: 30px;
   font-family: "Finger Paint", sans-serif;
@@ -54,7 +54,7 @@
 }
 
 .back {
-  position: relative; /* 让伪元素定位 */
+  position: relative;
   color: #1c1f1a;
   transform: rotateY(180deg);
   padding: 30px;
@@ -65,10 +65,10 @@
   border-style: dashed;
   border-color: #6b446a;
   border-width: 2px;
-  z-index: 1; /* 确保文字在上层 */
+  z-index: 1; /* Make sure the text is on top */
 }
 
-/* 添加伪元素让背景变透明 */
+/* make the background transparent */
 .back::before {
   content: "";
   position: absolute;
@@ -80,12 +80,12 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3; /* 仅背景透明 Mozilla */
-  z-index: -1; /* 确保背景不会遮挡文字 */
-  border-radius: 8px; /* 保持圆角 */
+  opacity: 0.3; /* Transparent background only Mozilla */
+  z-index: -1; /* Make sure the background doesn't obscure the text */
+  border-radius: 8px; /* rounded corners */
 }
 
-/* 文字样式，避免边距撑开 */
+/* text */
 .front p,
 .back p {
   margin: 0;
@@ -94,7 +94,7 @@
   box-sizing: border-box;
 }
 
-/* 只有 flipper 旋转，避免 front/back 变形 */
+/* Only the flipper rotates, avoiding front/back deformations. */
 .flip-container:hover .flipper {
   transform: rotateY(180deg);
 }
