@@ -98,3 +98,7 @@
 .flip-container:hover .flipper {
   transform: rotateY(180deg);
 }
+
+.flip-container {
+  margin-bottom: 20px;
+}

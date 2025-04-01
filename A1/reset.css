@@ -38,6 +38,33 @@ ul {
   padding-bottom: 20px;
 }
 
-.flipper {
-  margin-top: 50px;
+footer {
+  background-color: #111; 
+  opacity: 0.8;
+  color: #fff;
+  text-align: center;
+  width: 800px;
+}
+
+
+/* Line */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 170px;
+  bottom: 100px;
+  width: 2px; 
+  background: rgba(4, 4, 3, 0.361); 
+  z-index: 1;
+}
+
+/* Left Line */
+body::before {
+  left: 19.5%;
+}
+
+/* Right Line */
+body::after {
+  right: 19.5%;
 }
