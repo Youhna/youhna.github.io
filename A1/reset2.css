@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: #f3c3b2;
+  background-color: #ffd6c7;
   display: flex;
   flex-direction: column; /* Make all content vertically aligned */
   align-items: center; /* horizontal centering */
@@ -40,14 +40,14 @@ h1 {
   justify-content: center; /* horizontal centering */
   align-items: center; /* vertical centering */
   text-align: center; /* Centering multiple lines of text */
-  height: 50px; 
+  height: 50px;
   width: 110%; /* Make the box fill the grid width */
-  font-size: 10px; 
-  font-weight: bold; 
+  font-size: 10px;
+  font-weight: bold;
   color: #333; /* Give text contrast */
 }
 
-/* button style */
+/* button style, same as reset.css  */
 button {
   background-color: #484d64;
   color: white;

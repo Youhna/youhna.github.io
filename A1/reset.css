@@ -1,5 +1,5 @@
 h1 {
-  color: #2E365A;
+  color: #2e365a;
   font-family: "Bytesized", sans-serif; /* Interesting website with interesting fonts */
   font-weight: 600;
   font-size: 80px;
@@ -18,12 +18,12 @@ button {
 }
 
 button a {
-  text-decoration: none;
+  text-decoration: none; /*Font colour of the button，learn from ChatGPT */
   color: white;
 }
 
 button:hover {
-  background-color: #293553;
+  background-color: #293553; /* Mouse over, botton colour darkens ，learn from ChatGPT*/
 }
 
 ul {
