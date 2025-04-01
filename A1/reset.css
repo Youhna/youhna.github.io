@@ -39,13 +39,12 @@ ul {
 }
 
 footer {
-  background-color: #111; 
+  background-color: #111;
   opacity: 0.8;
   color: #fff;
   text-align: center;
-  width: 800px;
+  width: 920px;
 }
-
 
 /* Line */
 body::before,
@@ -53,18 +52,18 @@ body::after {
   content: "";
   position: fixed;
   top: 170px;
-  bottom: 100px;
-  width: 2px; 
-  background: rgba(4, 4, 3, 0.361); 
+  bottom: 150px;
+  width: 2px;
+  background: rgba(4, 4, 3, 0.361);
   z-index: 1;
 }
 
 /* Left Line */
 body::before {
-  left: 19.5%;
+  left: 20%;
 }
 
 /* Right Line */
 body::after {
-  right: 19.5%;
+  right: 20%;
 }
