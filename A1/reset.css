@@ -19,7 +19,7 @@ button {
 
 button a {
   text-decoration: none; /*Font colour of the button，learn from ChatGPT */
-  color: white;
+  color: white; /* Dark words on a light background. */
 }
 
 button:hover {

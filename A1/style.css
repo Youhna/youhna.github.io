@@ -7,7 +7,7 @@
   padding: 20px;
 }
 
-/* 3D flip-container */
+/* 3D flip-container. Unified size, the frame is more harmonious. */
 .flip-container {
   perspective: 1000px;
   width: 700px;
@@ -56,6 +56,7 @@
 .back {
   position: relative;
   color: #1c1f1a;
+  /* The background color is lighter, the font color is darker, the contrast is higher, and the text is clearer. */
   transform: rotateY(180deg);
   padding: 30px;
   font-size: small;
