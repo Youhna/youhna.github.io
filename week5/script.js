@@ -9,44 +9,48 @@
 //cmd/
 //this is a comment
 
-let grade = 80
-if (grade> 75){
-    console.log("yep! you got Distinction");
-}else{
-    console.log("You just passed the course");
+let grade = 80;
+if (grade > 75) {
+  console.log("yep! you got Distinction");
+} else {
+  console.log("You just passed the course");
 }
 {
-    let a =10;
-    console.log("value of a is", a)
+  let a = 10;
+  console.log("value of a is", a);
 }
-console.log("value of a is", a)
+console.log("value of a is", a);
 //numberical variables 0 -9
-let a =10;
-let b=parseInt("20");
-let c=a+b;
-console.log(a,b,c);
+let a = 10;
+let b = parseInt("20");
+let c = a + b;
+console.log(a, b, c);
 // +add - subtract *multiply / division
 //string or text variables``""``back ticks
-let myName ="Youhan";
-console.log("Hello",myName);
+let myName = "Youhan";
+console.log("Hello", myName);
 
-let myCity="Wuhan";
-let msg=<h1> I live in ${myCity}</h1>;
+let myCity = "Wuhan";
+let msg = <h1> I live in ${myCity}</h1>;
 console.log(msg);
 
-let isItSunday=false;
-const isItOART1013= true;
+let isItSunday = false;
+const isItOART1013 = true;
 //object variable
-const myStudentRecord= {
-    name:"Youhan",
-    id:1234,
-    homeTown:"Wuhan",
-    isLocal:true,
+const myStudentRecord = {
+  name: "Youhan",
+  id: 1234,
+  homeTown: "Wuhan",
+  isLocal: true,
 };
 console.log(myStudentRecord);
-console.log(myStudentRecord,homeTown);
-let student1= "hi";
-let student2= "yi";
-let student3= "wi";
-let student4= "qi";
-let student5= "ti";
+console.log(myStudentRecord, homeTown);
+let student1 = "hi";
+let student2 = "yi";
+let student3 = "wi";
+let student4 = "qi";
+let student5 = "ti";
+let students = ["hi", "yi", "wi", "qi", "ti"];
+for (let i = 0; i < students.length; i++) {
+  console.log("HELLO", students[i]);
+}
