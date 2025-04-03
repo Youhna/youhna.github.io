@@ -2,7 +2,7 @@ h1 {
   color: #2e365a;
   font-family: "Bytesized", sans-serif; /* Interesting website with interesting fonts */
   font-weight: 600;
-  font-size: 80px;
+  font-size: 80px; /* The title should be large, clear and attractive enough. */
   font-style: normal;
   text-align: center;
 }
@@ -42,16 +42,19 @@ footer {
   background-color: #111;
   opacity: 0.8;
   color: #fff;
+  /* Black and white, simple and high contrast */
   text-align: center;
   width: 920px;
 }
 
 /* Line */
+/* The interface can be divided into plate areas in a standardized manner */
 body::before,
 body::after {
   content: "";
   position: fixed;
   top: 170px;
+  /* Leave space for the title and footer */
   bottom: 150px;
   width: 2px;
   background: rgba(4, 4, 3, 0.361);
