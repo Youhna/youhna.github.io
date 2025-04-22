@@ -15,3 +15,6 @@ function updateClock() {
     window.location.href = "white-noise-video.html";
   });
   
+  // 跳转前保存当前播放的音频
+localStorage.setItem("currentTrack", "assets/piano.mp3");
+localStorage.setItem("currentTime", document.querySelector("audio").currentTime);

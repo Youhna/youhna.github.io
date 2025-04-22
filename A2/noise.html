@@ -77,9 +77,16 @@
               Your browser does not support the audio element.
             </audio>
           </div>
-
+          
         </div>
       </div>
       <button><a href="Music.html">Back</a></button>
+      <iframe id="content-frame" src="noise.html"></iframe>
+
+      <script>
+        function goTo(page) {
+          document.getElementById("content-frame").src = page;
+        }
+      </script>
 </body>
 </html>
