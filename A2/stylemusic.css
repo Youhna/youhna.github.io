@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik Distressed", system-ui;
+  background: linear-gradient(135deg, #d4e4f7, #f2f7f5);
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+/* 导航栏 */
+.top {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 100;
+}
+
+.top ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.top li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #3e4e64;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.top li a:hover {
+  color: #4a6fa5;
+}
+
+.music-bubble-container {
+  position: absolute; /* ⬅️ 让它脱离 Flex 影响 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; /* ⬅️ 确保不被导航栏遮住 */
+}
+/*渐变颜色 https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_images/Using_CSS_gradients */
+.music-bubble {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 1rem;
+  padding: 20px;
+  cursor: pointer;
+  /* 背景模糊效果 https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter */
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* 漂浮动画 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 每个泡泡自定义位置大小 */
+.music-bubble:nth-child(1) {
+  top: 30%;
+  left: 30%;
+  width: 110px;
+  height: 110px;
+}
+.music-bubble:nth-child(2) {
+  top: 50%;
+  left: 45%;
+  width: 120px;
+  height: 120px;
+}
+.music-bubble:nth-child(3) {
+  top: 70%;
+  left: 30%;
+  width: 140px;
+  height: 140px;
+}
+.music-bubble:nth-child(4) {
+  top: 25%;
+  left: 60%;
+  width: 110px;
+  height: 110px;
+}
+.music-bubble:nth-child(5) {
+  top: 60%;
+  left: 65%;
+  width: 140px;
+  height: 140px;
+}
+
+.music-bubble:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* music cards */
+.music-page {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.music-title {
+  font-size: 4rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: "Moirai One", cursive;
+  color: #333;
+}
+
+.music-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.music-card {
+  position: relative;
+  background: #ffffffc7;
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-5px);
+}
+
+.music-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.music-card audio {
+  width: 100%;
+  margin-top: 20px;
+  outline: none;
+}
+/* 底部按钮 */
+button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6c7b91;
+    color: #f0f4f8;
+    font-size: 18px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+button a {
+    text-decoration: none;
+    color: white;
+  }
+  
+button:hover {
+    background-color: #2f4c78;
+  }
+
+  
+  
