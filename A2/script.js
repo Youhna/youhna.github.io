@@ -65,7 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     let currentVideoIndex = 0;
-    const videoSources = ["video1.mp4", "video2.mp4", "video3.mp4"];
+    const videoSources = [
+      "video1.mp4",
+      "video2.mp4",
+      "video3.mp4",
+      "https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4",
+    ];
 
     if (switchBtn && video) {
       switchBtn.addEventListener("click", () => {
