@@ -14,12 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateClock, 1000);
   updateClock();
 
-  // video跳转（如果页面中有这个按钮）
-  const goBtn = document.getElementById("goToVideoBtn");
-  if (goBtn) {
-    goBtn.addEventListener("click", function () {
-      window.location.href = "white-noise-video.html";
+  // video跳转
+  document.querySelectorAll(".music-card a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // 阻止默认跳转
+      document.querySelector(".music-page").style.display = "none";
+      document.getElementById("videoSection").style.display = "block";
     });
+  });
+
+  function closeVideo() {
+    document.getElementById("videoSection").style.display = "none";
+    document.querySelector(".music-page").style.display = "block";
   }
 
   // 视频按钮逻辑
@@ -29,8 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const switchBtn = document.getElementById("switchBtn");
   const muteBtn = document.getElementById("muteBtn");
   const muteIcon = document.getElementById("muteIcon");
+  const fullscreenBtn = document.getElementById("fullscreenBtn");
+  const fullscreenIcon = document.getElementById("fullscreenIcon");
 
-  if (video && playPauseBtn && playIcon && switchBtn && muteBtn && muteIcon) {
+  if (
+    video &&
+    playPauseBtn &&
+    playIcon &&
+    switchBtn &&
+    muteBtn &&
+    muteIcon &&
+    fullscreenBtn &&
+    fullscreenIcon
+  ) {
     let isPlaying = true;
     let currentVideo = 1;
 
@@ -47,14 +64,16 @@ document.addEventListener("DOMContentLoaded", function () {
       isPlaying = !isPlaying;
     });
 
-    switchBtn.addEventListener("click", () => {
-      currentVideo = currentVideo === 1 ? 2 : 1;
-      video.src = `video/study${currentVideo}.mp4`;
-      video.play();
-      isPlaying = true;
-      playIcon.src = "image/icon6.png";
-      playIcon.alt = "Pause";
-    });
+    let currentVideoIndex = 0;
+    const videoSources = ["video1.mp4", "video2.mp4", "video3.mp4"];
+
+    if (switchBtn && video) {
+      switchBtn.addEventListener("click", () => {
+        currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+        video.src = videoSources[currentVideoIndex];
+        video.play(); // 确保切换后自动播放
+      });
+    }
 
     muteBtn.addEventListener("click", () => {
       video.muted = !video.muted;
@@ -64,6 +83,12 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         muteIcon.src = "image/icon5.png";
         muteIcon.alt = "Unmute";
+      }
+    });
+
+    fullscreenBtn.addEventListener("click", () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
       }
     });
   }

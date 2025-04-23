@@ -35,8 +35,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0;
-  margin: 0;
+ 
 }
 
 .top li a {
@@ -198,4 +197,29 @@ button a {
 
 button:hover {
   background-color: #2f4c78;
+}  
+
+#videoSection{
+    display:none
 }
+
+.video-container {
+    position: fixed;
+    top: 100px; /* 可以根据需要微调垂直位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
+  }
+   
+  
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.9);
+    border-radius: 5px;
+    margin-top: 40px;
+  }
