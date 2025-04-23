@@ -6,7 +6,8 @@
 
 body {
   font-family: "Rubik Distressed", system-ui;
-  background: linear-gradient(135deg, #d4e4f7, #f2f7f5);
+  background: linear-gradient(135deg, #e8eef2, #f2f7f5);
+  color: #3e4e64;
   height: 100vh;
   margin: 0;
   overflow: hidden;
@@ -35,7 +36,6 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
- 
 }
 
 .top li a {
@@ -47,7 +47,7 @@ body {
 }
 
 .top li a:hover {
-  color: #4a6fa5;
+  color: #a08fbb;
 }
 
 .music-bubble-container {
@@ -65,7 +65,7 @@ body {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  color: #333;
+  color: #3e4e64;
   font-size: 1rem;
   padding: 20px;
   cursor: pointer;
@@ -140,7 +140,7 @@ body {
   margin-top: 40px;
   margin-bottom: 40px;
   font-family: "Moirai One", cursive;
-  color: #333;
+  color: #3e4e64;
 }
 
 .music-grid {
@@ -156,7 +156,7 @@ body {
   border-radius: 20px;
   padding: 30px;
   width: 300px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(160, 143, 187, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -167,6 +167,7 @@ body {
 .music-card h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  color: #3e4e64;
 }
 
 .music-card audio {
@@ -180,7 +181,7 @@ button {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #6c7b91;
+  background-color: #5c6c87;
   color: #f0f4f8;
   font-size: 18px;
   padding: 12px 28px;
@@ -196,30 +197,27 @@ button a {
 }
 
 button:hover {
-  background-color: #2f4c78;
-}  
+  background-color: #a08fbb;
+}
 
-#videoSection{
-    display:none
+#videoSection {
+  display: none;
 }
 
 .video-container {
-    position: fixed;
-    top: 100px; /* 可以根据需要微调垂直位置 */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 800px;
-    overflow: hidden;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
-  }
-   
-  
-  video {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: brightness(0.9);
-    border-radius: 5px;
-    margin-top: 40px;
-  }
+  position: fixed;
+  top: 100px; /* 可以根据需要微调垂直位置 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.95);
+  border-radius: 12px;
+  margin-top: 40px;
+}

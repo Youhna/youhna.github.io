@@ -6,12 +6,12 @@
 
 body {
   font-family: "Rubik Distressed", system-ui;
-  background: linear-gradient(135deg, #d4e4f7, #f2f7f5);
+  background: linear-gradient(135deg, #e8eef2, #f2f7f5);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #2e2e2e;
+  color: #3e4e64;
 }
 
 h1 {
@@ -68,7 +68,7 @@ h1 {
 }
 
 .top li a:hover {
-  color: #4a6fa5;
+  color: #c6b8d8;
 }
 /* 时钟 */
 .clock-container {
@@ -83,7 +83,7 @@ h1 {
 .flip-clock {
   font-size: 10rem;
   font-weight: bold;
-  color: #2e2e2e;
+  color: #3e4e64;
   background: #ffffffc9;
   padding: 20px;
   border-radius: 20px;
@@ -119,15 +119,15 @@ video {
   transform: translateX(-50%);
   display: flex;
   gap: 12px;
-  background: rgba(114, 143, 181, 0.4);
+  background: rgba(198, 184, 216, 0.4);
   padding: 10px 20px;
   border-radius: 30px;
   backdrop-filter: blur(5px);
 }
 
 button {
-  background: white;
-  color: #74bab9;
+  background: #fafafa;
+  color: #3e4e64;
   padding: 7px 12px;
   border-radius: 20px;
   cursor: pointer;
@@ -139,7 +139,7 @@ button {
 }
 
 button:hover {
-  background: #ddd;
+  background: #f6b28e;
 }
 
 .video-title {
@@ -147,7 +147,7 @@ button:hover {
   margin-top: 40px;
   margin-bottom: 60px;
   font-family: "Moirai One", cursive;
-  color: #333;
+  color: #3e4e64;
 }
 #fullscreenBtn img {
     width: 15px;
