@@ -94,3 +94,58 @@ h1 {
   font-style: normal;
   transition: all 0.3s ease;
 }
+
+/* Video page */
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.9);
+  border-radius: 5px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(114, 143, 181, 0.4);
+  padding: 10px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+}
+
+button {
+  background: white;
+  color: #74bab9;
+  padding: 7px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.controls button img {
+  max-width: 30px;
+  max-height: 15px;
+}
+
+button:hover {
+  background: #ddd;
+}
+
+.video-title {
+  font-size: 3rem;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  font-family: "Moirai One", cursive;
+  color: #333;
+}

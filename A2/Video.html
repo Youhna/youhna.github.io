@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js" />
+    <title>Video</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Rubik+Distressed&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
-    <title>Video</title>
 </head>
 <body>
 
@@ -22,7 +20,27 @@
             <li><a href="Video.html">Video</a></li>
           </ul>
         </nav>
-      </header>
+    </header>
 
+    <div class="video-container">
+        <h1 class="video-title">Fragments of Learning 📚✨</h1>
+        <video id="studyVideo" autoplay loop src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4">
+          Your browser does not support the video tag
+        </video>
+      
+        <div class="controls">
+          <button id="playPauseBtn">
+            <img id="playIcon" src="image/icon6.png" alt="Pause" />
+          </button>
+          <button id="switchBtn">
+            <img src="image/icon3.png" alt="Switch Video" />
+          </button>
+          <button id="muteBtn">
+            <img id="muteIcon" src="image/icon4.png" alt="Mute" />
+          </button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
