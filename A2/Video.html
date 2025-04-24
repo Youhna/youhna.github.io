@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Video</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Rubik+Distressed&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Rubik+Distressed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="top">
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="clock.html">Clock</a></li>
-            <li><a href="Music.html">Music</a></li>
-            <li><a href="Video.html">Video</a></li>
-          </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="clock.html">Clock</a></li>
+          <li><a href="Music.html">Music</a></li>
+          <li><a href="Video.html">Video</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="video-container">
-        <h1 class="video-title">Fragments of Learning 📚✨</h1>
-        <video id="studyVideo" autoplay loop src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4">
-            <!-- https://pixabay.com/videos/girl-study-relax-anime-143782/ -->
-          Your browser does not support the video tag
-        </video>
-    
-      
-        <div class="controls">
-          <button id="playPauseBtn">
-            <img id="playIcon" src="image/icon6.png" alt="Pause" />
-          </button>
-          <button id="switchBtn">
-            <img src="image/icon3.png" alt="Switch Video" />
-          </button>
-          <button id="muteBtn">
-            <img id="muteIcon" src="image/icon4.png" alt="Mute" />
-          </button>
-          <button id="fullscreenBtn">
-            <img id="fullscreenIcon" src="image/icon7.png" alt="Fullscreen" />
-          </button>
-          
-        </div>
+      <!-- Video interface, learning partner, more focused -->
+      <h1 class="video-title">Fragments of Learning 📚✨</h1>
+      <video
+        id="studyVideo"
+        autoplay
+        loop
+        src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+      >
+        <!-- https://pixabay.com/videos/girl-study-relax-anime-143782/ -->
+        Your browser does not support the video tag
+      </video>
+      <!-- The video can be played and paused, different videos can be switched, the sound can be muted, and full screen can be selected -->
+      <div class="controls">
+        <button id="playPauseBtn">
+          <img id="playIcon" src="image/icon6.png" alt="Pause" />
+        </button>
+        <button id="switchBtn">
+          <img src="image/icon3.png" alt="Switch Video" />
+        </button>
+        <button id="muteBtn">
+          <img id="muteIcon" src="image/icon4.png" alt="Mute" />
+        </button>
+        <button id="fullscreenBtn">
+          <img id="fullscreenIcon" src="image/icon7.png" alt="Fullscreen" />
+        </button>
+      </div>
     </div>
 
     <script src="script.js" defer></script>
-</body>
+  </body>
 </html>

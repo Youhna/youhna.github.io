@@ -1,3 +1,11 @@
+/* Visual style
+Add slight shadows, rounded corners, and beautified borders around the video.
+The control bar uses backdrop-filter: blur to create a glass effect and a semi-transparent background.
+The button changes color when hovering to provide visual feedback */
+
+/*Layout style：
+The video-container uses centered fixed positioning (or relative), with a maximum width of 800px, which is suitable for most screens.
+The control area buttons use flex layout with reasonable spacing to prevent crowding.*/
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +21,7 @@ body {
   overflow: hidden;
   position: relative;
 }
-/* 导航栏 */
+/* Navigation bar */
 .top {
   position: absolute;
   top: 5%;
@@ -50,15 +58,16 @@ body {
   color: #a08fbb;
 }
 
+/* bubble effect */
 .music-bubble-container {
-  position: absolute; /* ⬅️ 让它脱离 Flex 影响 */
+  position: absolute; /* Get it out of Flex*/
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 0; /* ⬅️ 确保不被导航栏遮住 */
+  z-index: 0; /* Make sure it is not covered by the navigation bar */
 }
-/*渐变颜色 https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_images/Using_CSS_gradients */
+
 .music-bubble {
   position: absolute;
   border: none;
@@ -69,8 +78,8 @@ body {
   font-size: 1rem;
   padding: 20px;
   cursor: pointer;
-  /* 背景模糊效果 https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter */
-  animation: float 6s ease-in-out infinite;
+  /* background Blur effect https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter */
+  animation: float 6s ease-in-out infinite;/*Zoom in + increase background brightness when hovering to simulate the light feeling of "bubbles being touched";*/
   transition: transform 0.3s;
   backdrop-filter: blur(5px);
   z-index: 1;
@@ -78,10 +87,10 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  word-break: break-word;
+  word-break: break-word;/*Ensure that the text in the bubble is centered and adapts to line breaks*/
 }
 
-/* 漂浮动画 */
+/* Floating Animation */
 @keyframes float {
   0%,
   100% {
@@ -92,7 +101,9 @@ body {
   }
 }
 
-/* 每个泡泡自定义位置大小 */
+/* Customize the position and size of each bubble */
+/* Use nth-child to accurately set the position and size of each bubble to avoid overlapping; */
+/* The design principle is to maintain a sense of visual balance, orderly but slightly random distribution, in line with the dreamlike, light and free interface tone; */
 .music-bubble:nth-child(1) {
   top: 30%;
   left: 30%;
@@ -125,7 +136,7 @@ body {
 }
 
 .music-bubble:hover {
-  transform: scale(1.1);
+  transform: scale(1.1);/*Create a "bubble bulging" effect*/
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -149,7 +160,7 @@ body {
   flex-wrap: wrap;
   gap: 30px;
 }
-
+/*Single music card design*/
 .music-card {
   position: relative;
   background: #ffffffc7;
@@ -160,7 +171,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.music-card:hover {
+.music-card:hover {/*Move up slightly when hovering (translateY): Enhance interaction and dynamic feedback*/
   transform: translateY(-5px);
 }
 
@@ -169,13 +180,13 @@ body {
   margin-bottom: 20px;
   color: #3e4e64;
 }
-
+/*Play Bar*/
 .music-card audio {
   width: 100%;
   margin-top: 20px;
   outline: none;
 }
-/* 底部按钮 */
+/* Bottom button */
 button {
   position: absolute;
   bottom: 40px;
@@ -200,13 +211,16 @@ button:hover {
   background-color: #a08fbb;
 }
 
+/*Video module control*/
+/*It does not appear when the page is loading, and only appears when jumping to the video interface. 
+Keep the web page clean and avoid the initial loading from distracting the user's attention.*/
 #videoSection {
   display: none;
 }
 
 .video-container {
   position: fixed;
-  top: 100px; /* 可以根据需要微调垂直位置 */
+  top: 100px; 
   left: 50%;
   transform: translateX(-50%);
   width: 90%;

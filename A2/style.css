@@ -1,3 +1,11 @@
+/* Visual style
+Add slight shadows, rounded corners, and beautified borders around the video.
+The control bar uses backdrop-filter: blur to create a glass effect and a semi-transparent background.
+The button changes color when hovering to provide visual feedback */
+
+/*Layout style：
+The video-container uses centered fixed positioning (or relative), with a maximum width of 800px, which is suitable for most screens.
+The control area buttons use flex layout with reasonable spacing to prevent crowding.*/
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +26,11 @@ h1 {
   font-size: 10rem;
   text-align: center;
   color: #4a6fa5;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 2s ease-in-out;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /*Enhance the three-dimensional sense and avoid visual thinness*/
+  animation: fadeIn 2s ease-in-out; /*Enhance the visual appeal of the page as it loads, making elements fade into view for a more modern feel*/
 }
-
+/* Slide in gradually from the bottom and fade in; */
+/* Improve the "dynamic feeling" of the page when it is first loaded, which is in line with the theme of "dynamic learning space"; */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -32,10 +41,10 @@ h1 {
     transform: translateY(0);
   }
 }
-/* 导航栏 */
+/* navigation bar */
 .top {
   position: absolute;
-  top: 5%;
+  top: 5%; /*Move down a distance to make it more visually stretched*/
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -51,7 +60,7 @@ h1 {
 }
 
 .top ul {
-  list-style: none;
+  list-style: none; /*Remove default list-style and margins to create a clean look*/
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -60,48 +69,51 @@ h1 {
 }
 
 .top li a {
-  text-decoration: none;
+  text-decoration: none; /*Remove underline to enhance modern feel*/
   font-weight: 500;
   color: #3e4e64;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /*Use transitions to improve the interactive feel and increase sophistication*/
 }
 
 .top li a:hover {
   color: #c6b8d8;
 }
-/* 时钟 */
+/* clock */
+/* - Minimalistic and clear, avoiding visual distractions.
+- Strong sense of blank space, highlighting the time function.
+- Provide an immersive learning experience of "focus", "company" and "atmosphere". */
 .clock-container {
   width: 900px;
   height: auto;
-  z-index: 1;
+  z-index: 1; /* Make sure it appears above the background */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .flip-clock {
-  font-size: 10rem;
+  font-size: 10rem; /*Large and eye-catching, creating a "sense of focused ritual".Hiarachy*/
   font-weight: bold;
   color: #3e4e64;
-  background: #ffffffc9;
+  background: #ffffffc9; /*Glass mimicry*/
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-family: "Moirai One", system-ui;
+  font-family: "Moirai One", system-ui; /*Simple artistic sense.Make sure the entire interface has no more than 2-3 fonts. Keep it simple and easy to understand.*/
   font-weight: 400;
   font-style: normal;
   transition: all 0.3s ease;
 }
 
-/* Video page */
+/* Solo Video page */
 .video-container {
   position: relative;
   width: 90%;
   max-width: 800px;
   overflow: hidden;
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.05); /*Creates a shimmer effect that emphasizes screen content without overly distracting from it.*/
 }
 
 video {
@@ -109,7 +121,7 @@ video {
   height: auto;
   display: block;
   filter: brightness(0.9);
-  border-radius: 5px;
+  border-radius: 5px; /*Increase visual softness to keep in line with the overall rounded style*/
 }
 
 .controls {
@@ -128,18 +140,19 @@ video {
 button {
   background: #fafafa;
   color: #3e4e64;
-  padding: 7px 12px;
+  padding: 7px 12px; /*The buttons should be clear but shouldn't take up too much space*/
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
+/* icon size */
 .controls button img {
   max-width: 30px;
   max-height: 15px;
 }
 
 button:hover {
-  background: #f6b28e;
+  background: #c6b8d8;
 }
 
 .video-title {
@@ -149,8 +162,3 @@ button:hover {
   font-family: "Moirai One", cursive;
   color: #3e4e64;
 }
-#fullscreenBtn img {
-    width: 15px;
-    height: 30px;
-  }
-  
