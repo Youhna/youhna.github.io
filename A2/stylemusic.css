@@ -79,7 +79,7 @@ body {
   padding: 20px;
   cursor: pointer;
   /* background Blur effect https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter */
-  animation: float 6s ease-in-out infinite;/*Zoom in + increase background brightness when hovering to simulate the light feeling of "bubbles being touched";*/
+  animation: float 6s ease-in-out infinite; /*Zoom in + increase background brightness when hovering to simulate the light feeling of "bubbles being touched";*/
   transition: transform 0.3s;
   backdrop-filter: blur(5px);
   z-index: 1;
@@ -87,7 +87,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  word-break: break-word;/*Ensure that the text in the bubble is centered and adapts to line breaks*/
+  word-break: break-word; /*Ensure that the text in the bubble is centered and adapts to line breaks*/
 }
 
 /* Floating Animation */
@@ -136,7 +136,7 @@ body {
 }
 
 .music-bubble:hover {
-  transform: scale(1.1);/*Create a "bubble bulging" effect*/
+  transform: scale(1.1); /*Create a "bubble bulging" effect*/
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -171,7 +171,8 @@ body {
   transition: transform 0.3s ease;
 }
 
-.music-card:hover {/*Move up slightly when hovering (translateY): Enhance interaction and dynamic feedback*/
+.music-card:hover {
+  /*Move up slightly when hovering (translateY): Enhance interaction and dynamic feedback*/
   transform: translateY(-5px);
 }
 
@@ -220,7 +221,7 @@ Keep the web page clean and avoid the initial loading from distracting the user'
 
 .video-container {
   position: fixed;
-  top: 100px; 
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
