@@ -77,7 +77,7 @@ body {
   color: #3e4e64;
   font-size: 1rem;
   padding: 20px;
-  cursor: pointer;
+  cursor: pointer;/*Mouse cursor changes*/
   /* background Blur effect https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter */
   animation: float 6s ease-in-out infinite; /*Zoom in + increase background brightness when hovering to simulate the light feeling of "bubbles being touched";*/
   transition: transform 0.3s;
@@ -199,7 +199,7 @@ button {
   padding: 12px 28px;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: pointer; /*Mouse cursor changes*/
   z-index: 10;
 }
 
