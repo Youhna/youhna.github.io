@@ -1,70 +1,241 @@
-/* 容器设置 3D 透视 */
-.flip-container {
-  perspective: 1000px;
-  position: relative;
-  border-radius: 10px;
-  width: 1000px;
-  height:400px;
-  margin: 50px;
-  background-color: #F6F1DE;
-  box-shadow: 1px 1px 12px #000;
-  border-radius: 1px;
+/* style.css */
+
+body {
+  background: #0a0a0a;
+  color: #eee;
+  overflow-x: hidden;
 }
 
-
-/* 翻页元素设置 */
-.flipper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d; /* 保持 3D 空间 */
-}
-
-/* 正反面共用样式 */
-.front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* 隐藏背面 */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(15, 15, 15, 0.85);
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 19px;
-  border-radius: 8px;
-  border-style: dashed;
-  border-color: #6b446a;
-  border-width: 2px;
+  align-items: center;
+  z-index: 1000;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* 正面样式 */
-.front {
-  background: #F6F1DE;
-  transform: rotateY(0deg);
+nav a {
+  color: #bbb;
+  margin: 0 1.2rem;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+nav a.active,
+nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #6fc3df;
+}
+
+main {
+  padding-top: 80px;
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+}
+
+/* Intro & Video sections */
+.intro,
+.video-section {
   text-align: center;
+  padding: 120px 1rem 80px;
 }
 
-/* 背面样式（默认隐藏） */
-.back {
-  background: #ACD3A8;
-  color: #1c1f1a;
-  transform: rotateY(180deg);
-  text-align: left;
+.intro h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #6fc3df;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-/* 悬停时翻转 */
-.flip-container:hover .flipper {
-  transform: rotateY(180deg);
+.intro p {
+  font-size: 1.2rem;
+  color: #bbb;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
 }
 
-.flip-container {
-  max-width: 600px;
-  padding: 0%;
-  text-align: center;
-  
+.video-section iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 395px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(184, 203, 209, 0.5);
+  transition: box-shadow 0.3s ease;
+  padding: 10px;
+  margin-top: 30px;
 }
 
-p {
-  padding: 20px 30px;
+.video-section iframe:hover {
+  box-shadow: 0 0 30px #b8acd3;
+}
+
+/* 时间线主容器 */
+.timeline {
+  position: relative;
+  margin: 4rem 0 8rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 时间线中线 */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, #6fc3df 0%, transparent 80%);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  filter: drop-shadow(0 0 5px #6fc3df);
+  z-index: 0;
+}
+
+/* 时间线节点 */
+.timeline-item {
+  position: relative;
+  display: flex;
+  max-width: 760px;
+  margin: 3rem auto;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  z-index: 1;
+}
+
+/* 节点激活时显示 */
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 左右交替排列 */
+/* 左侧节点，内容顺序：文字 | 点 | 图片 */
+.timeline-item.left {
+  flex-direction: row; /* 文字 | 点 | 图片 */
+  justify-content: flex-start;
+  padding-left: 60px;
+  padding-right: 0;
+}
+
+/* 右侧节点，内容顺序：图片 | 点 | 文字 */
+.timeline-item.right {
+  flex-direction: row-reverse; /* 文字 | 点 | 图片反向 */
+  justify-content: flex-start;
+  padding-right: 60px;
+  padding-left: 0;
+}
+
+/* 文字区 */
+/* 文字靠近中线一侧加大margin，避免覆盖点 */
+.timeline-item.left .text-side {
+  margin-right: 80px;
+  margin-left: 40px;
+}
+
+.timeline-item.right .text-side {
+  margin-left: 80px;
+  margin-right: 40px;
+}
+
+/* 图片区 */
+/* 图片靠近中线一侧加大margin */
+.timeline-item.left .image-side {
+  margin-left: 80px;
+  margin-right: 60px;
+}
+
+.timeline-item.right .image-side {
+  margin-right: 100px;
+  margin-left: 50px;
+}
+
+/* 图片区 */
+.image-side {
+  flex-shrink: 0;
+  width: 200px;
+  height: 140px;
+  box-shadow: 0 0 20px rgba(158, 196, 209, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  transition: filter 0.3s ease;
+}
+
+.image-side:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #6fc3df;
+}
+
+.image-side:hover img {
+  filter: brightness(1);
+}
+
+/* 时间线节点小圆点 */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: #6fc3df;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #6fc3df;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 适配手机 */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column !important;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: center !important;
+    direction: ltr !important;
+    padding: 0 !important;
+  }
+  .text-side,
+  .image-side {
+    max-width: 90vw;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .timeline-item::after {
+    left: 10px;
+    top: 10px;
+  }
 }

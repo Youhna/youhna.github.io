@@ -1,41 +1,79 @@
-  
+/* reset.css */
+*,
+*::before,
+*::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
 
-  h1 {
-    color: rgb(71, 82, 144);
-    font-family: "Bytesized", sans-serif;
-    font-weight: 600;
-    font-size: 80px;
-    font-style: normal;
-    text-align: center;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
-    min-height: 8px;
-    list-style: none;
-    display: flex;
-    gap: 10rem;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 20px;
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
-  }
+html, body {
+  height: 100%;
+  background-color: #0a0a0a;
+  color: #eee;
+  font-family: 'Playfair Display', serif;
+  scroll-behavior: smooth;
+}
 
-  li {
-    /* flex: 1; */
-    background-color: #5d895d;
-    /* flex-grow: 1; */
-    padding: 1%;
-    border-radius: 3px;}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
 
- .flipper{margin-top: 50px;}
- 
- .flip-container {
-    background-image: url(image1.png);
-    background-size: 100% 100%;
- }
+.gallery-track img {
+  flex-shrink: 0;
+  width: 270px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(130, 111, 223, 0.4);
+  filter: brightness(0.85);
+  transition: transform 0.6s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
 
-  
+/* === Scroll Gallery === */
 
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #b0a6f9;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.14em;
+  text-shadow: 0 0 8px #7a6eccaa;
+  z-index: 2;
+  position: relative;
+}
 
+.gallery-track {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  padding: 40px;
+  perspective: 1000px;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-track img {
+  flex-shrink: 0;
+  width: 260px;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.4s, z-index 0.4s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  scroll-snap-align: center;
+  will-change: transform;
+  cursor: pointer;
+}
+.gallery-track img:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 0 28px #9e8dffcc;
+  filter: brightness(1);
+  z-index: 10;
+}

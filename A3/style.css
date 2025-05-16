@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #0c0c0c;
+    color: white;
+    scroll-behavior: smooth;
+  }
+  
+  section {
+    padding: 80px 10vw;
+  }
+  
+  .intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .intro h1 {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 1rem;
+  }
+  
+  .soul-lines {
+    font-size: 2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+  }
+  
+  .soul-lines.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-gallery {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 60px 0;
+  }
+  
+  .gallery-track {
+    display: flex;
+    gap: 2rem;
+    padding-left: 10vw;
+  }
+  
+  .gallery-track img {
+    width: 60vw;
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+  }
+  
+  .gallery-track img:hover {
+    transform: scale(1.03);
+  }
+  
+  .video-section {
+    text-align: center;
+  }
+  
+  iframe {
+    width: 80%;
+    height: 60vh;
+    border: none;
+    border-radius: 10px;
+  }
+  

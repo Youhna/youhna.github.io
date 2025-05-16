@@ -1,0 +1,175 @@
+/* Basic reset from https://meyerweb.com/eric/tools/css/reset/ */
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #0c0c0c;
+    color: white;
+    scroll-behavior: smooth;
+    transition: background-color 0.8s ease;
+  }
+  
+  section {
+    padding: 80px 10vw;
+  }
+  
+  .intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .intro h1 {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 1rem;
+  }
+  
+  .soul-lines {
+    font-size: 2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+  }
+  
+  .soul-lines.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-gallery {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 60px 0;
+  }
+  
+  .gallery-track {
+    display: flex;
+    gap: 2rem;
+    padding-left: 10vw;
+  }
+  
+  .gallery-track img {
+    width: 60vw;
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+  }
+  
+  .gallery-track img:hover {
+    transform: scale(1.03);
+  }
+  
+  .video-section {
+    text-align: center;
+  }
+  
+  iframe {
+    width: 80%;
+    height: 60vh;
+    border: none;
+    border-radius: 12px;
+  }
+
+  /* === Scroll Gallery === */
+.scroll-gallery {
+  position: relative;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #0f1c3f, #2c365a);
+  border-radius: 16px;
+  box-shadow: inset 0 0 50px #364877aa;
+  overflow: hidden;
+  user-select: none;
+}
+
+.scroll-gallery::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 20%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #826fdf80, transparent 70%);
+  filter: blur(90px);
+  animation: glowPulse 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #b0a6f9;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.14em;
+  text-shadow: 0 0 8px #7a6eccaa;
+  z-index: 2;
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 1.8rem;
+  overflow-x: auto;
+  padding: 10px 0 15px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #8f8acc33 transparent;
+  z-index: 2;
+}
+
+.gallery-track::-webkit-scrollbar {
+  height: 8px;
+  background: transparent;
+}
+
+.gallery-track::-webkit-scrollbar-thumb {
+  background: #a59eeeaa;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-track::-webkit-scrollbar-thumb:hover {
+  background: #bdb9ffcc;
+}
+
+.gallery-track img {
+  flex-shrink: 0;
+  width: 270px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(130, 111, 223, 0.4);
+  filter: brightness(0.85);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.gallery-track img:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 0 28px #9e8dffcc;
+  filter: brightness(1);
+  z-index: 10;
+}
+
+/* 光晕动画 */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
