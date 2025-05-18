@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+
   // ================== 视频自动播放控制 ==================
   const videoFrame = document.getElementById('film');
   if (videoFrame) {
