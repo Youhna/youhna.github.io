@@ -1,83 +1,238 @@
+/* === 基础设置 === */
 body {
-    margin: 0;
-    font-family: 'Playfair Display', serif;
-    background-color: #0c0c0c;
-    color: white;
-    scroll-behavior: smooth;
+  background: #0a0a0a;
+  color: #eee;
+  overflow-x: hidden;
+}
+
+/* === 导航栏 nav === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+nav a {
+  color: #bbb;
+  margin: 0 1.2rem;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+nav a.active,
+nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #6fc3df;
+}
+
+/* === 主内容区域 === */
+main {
+  padding-top: 100px;
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+}
+
+/* === Intro Section === */
+.intro {
+  text-align: center;
+  padding: 120px 1rem 100px;
+  position: relative;
+}
+
+.intro h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #6fc3df;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: #bbb;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* === Video Section === */
+.video-section {
+  text-align: center;
+  padding: 120px 1rem 90px;
+}
+
+.video-section iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 395px;
+  border-radius: 14px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom:90px;
+  box-shadow: 0 0 20px rgba(184, 203, 209, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.video-section iframe:hover {
+  box-shadow: 0 0 30px #b8acd3;
+}
+
+/* === Timeline 主容器 === */
+.timeline {
+  position: relative;
+  margin: 4rem 0 5rem;
+  padding: 100px 20px 130px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, #6fc3df 0%, transparent 80%);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  filter: drop-shadow(0 0 5px #6fc3df);
+  z-index: 0;
+}
+
+/* === 时间线节点 === */
+.timeline-item {
+  position: relative;
+  display: flex;
+  max-width: 800px;
+  margin: 3rem auto;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 1;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.timeline-item.left {
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  padding-right: 60px;
+}
+
+.timeline-item.left .text-side {
+  margin-right: 100px;
+  margin-left: 60px;
+}
+
+.timeline-item.right .text-side {
+  margin-left: 100px;
+  margin-right: 60px;
+}
+
+.timeline-item.left .image-side {
+  margin-left: 80px;
+  margin-right: 60px;
+}
+
+.timeline-item.right .image-side {
+  margin-right: 100px;
+  margin-left: 50px;
+}
+
+/* === 时间线图片 === */
+.image-side {
+  flex-shrink: 0;
+  width: 200px;
+  height: 140px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(158, 196, 209, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  transition: filter 0.3s ease;
+}
+
+.image-side:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #6fc3df;
+}
+
+.image-side:hover img {
+  filter: brightness(1);
+}
+
+/* === 时间线节点圆点 === */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: #6fc3df;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #6fc3df;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* === 响应式 === */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column !important;
+    max-width: 100%;
+    padding: 0 20px;
   }
-  
-  section {
-    padding: 80px 10vw;
+
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: center !important;
+    padding: 0 !important;
+    direction: ltr !important;
   }
-  
-  .intro {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+
+  .text-side,
+  .image-side {
+    max-width: 90vw;
+    width: 100%;
+    margin: 1rem 0;
   }
-  
-  .intro h1 {
-    font-size: 3rem;
-    line-height: 1.4;
+
+  .timeline-item::after {
+    left: 10px;
+    top: 10px;
   }
-  
-  .subtitle {
-    font-size: 1.2rem;
-    color: #aaa;
-    margin-top: 1rem;
-  }
-  
-  .soul-lines {
-    font-size: 2rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-  }
-  
-  .soul-lines.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .scroll-gallery {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding: 60px 0;
-  }
-  
-  .gallery-track {
-    display: flex;
-    gap: 2rem;
-    padding-left: 10vw;
-  }
-  
-  .gallery-track img {
-    width: 60vw;
-    max-height: 80vh;
-    object-fit: cover;
-    border-radius: 16px;
-    transition: transform 0.4s ease;
-  }
-  
-  .gallery-track img:hover {
-    transform: scale(1.03);
-  }
-  
-  .video-section {
-    text-align: center;
-  }
-  
-  iframe {
-    width: 80%;
-    height: 60vh;
-    border: none;
-    border-radius: 10px;
-  }
-  
+}
