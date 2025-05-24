@@ -1,103 +1,105 @@
 // ================== 页面加载后执行 ==================
 document.addEventListener("DOMContentLoaded", () => {
-    revealTimelineItems(); // 初始加载就检测时间线可见性
-    initCarousel();        // 初始化扇形旋转画廊
-  });
-  
-  // ================== 时间线滚动显现 ==================
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85;
-  }
-  function revealTimelineItems() {
-    timelineItems.forEach(item => {
-      if (isInViewport(item)) {
-        item.classList.add('visible');
-      }
-    });
-  }
+  revealTimelineItems(); // 初始加载就检测时间线可见性
+  initCarousel(); // 初始化扇形旋转画廊
+});
 
-  // ================== 导航滚动高亮 + 平滑滚动 ==================
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').slice(1);
-      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-    });
+// ================== 时间线滚动显现 ==================
+const timelineItems = document.querySelectorAll(".timeline-item");
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top <=
+    (window.innerHeight || document.documentElement.clientHeight) * 0.85
+  );
+}
+function revealTimelineItems() {
+  timelineItems.forEach((item) => {
+    if (isInViewport(item)) {
+      item.classList.add("visible");
+    }
   });
-  window.addEventListener('scroll', () => {
-    revealTimelineItems(); // 滚动时检测时间线
-  
-    // 高亮当前导航
-    const fromTop = window.scrollY + 80;
-    navLinks.forEach(link => {
-      const section = document.querySelector(link.getAttribute('href'));
-      if (
-        section.offsetTop <= fromTop &&
-        section.offsetTop + section.offsetHeight > fromTop
-      ) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
+}
+
+// ================== 导航滚动高亮 + 平滑滚动 ==================
+const navLinks = document.querySelectorAll("nav a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").slice(1);
+    document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+  });
+});
+window.addEventListener("scroll", () => {
+  revealTimelineItems(); // 滚动时检测时间线
+
+  // 高亮当前导航
+  const fromTop = window.scrollY + 80;
+  navLinks.forEach((link) => {
+    const section = document.querySelector(link.getAttribute("href"));
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
+
+// ================== 视频自动播放控制 ==================
+const videoFrame = document.getElementById("film");
+if (videoFrame) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        videoFrame.contentWindow.postMessage(
+          entry.isIntersecting ? '{"method":"play"}' : '{"method":"pause"}',
+          "*"
+        );
+      });
+    },
+    { threshold: 0.5 }
+  );
+  observer.observe(videoFrame);
+}
+
+// ================== 横向拖拽滚动画廊 ==================
+const galleryTrack = document.querySelector(".gallery-track");
+if (galleryTrack) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  galleryTrack.addEventListener("mousedown", (e) => {
+    isDown = true;
+    galleryTrack.classList.add("active-drag");
+    startX = e.pageX - galleryTrack.offsetLeft;
+    scrollLeft = galleryTrack.scrollLeft;
   });
 
-  // ================== 视频自动播放控制 ==================
-  const videoFrame = document.getElementById('film');
-  if (videoFrame) {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          videoFrame.contentWindow.postMessage(
-            entry.isIntersecting ? '{"method":"play"}' : '{"method":"pause"}',
-            '*'
-          );
-        });
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(videoFrame);
-  }
-  
-  // ================== 横向拖拽滚动画廊 ==================
-  const galleryTrack = document.querySelector('.gallery-track');
-  if (galleryTrack) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-  
-    galleryTrack.addEventListener('mousedown', (e) => {
-      isDown = true;
-      galleryTrack.classList.add('active-drag');
-      startX = e.pageX - galleryTrack.offsetLeft;
-      scrollLeft = galleryTrack.scrollLeft;
-    });
-  
-    galleryTrack.addEventListener('mouseleave', () => {
-      isDown = false;
-      galleryTrack.classList.remove('active-drag');
-    });
-  
-    galleryTrack.addEventListener('mouseup', () => {
-      isDown = false;
-      galleryTrack.classList.remove('active-drag');
-    });
-  
-    galleryTrack.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - galleryTrack.offsetLeft;
-      const walk = (x - startX) * 2;
-      galleryTrack.scrollLeft = scrollLeft - walk;
-    });
-  }
-  
+  galleryTrack.addEventListener("mouseleave", () => {
+    isDown = false;
+    galleryTrack.classList.remove("active-drag");
+  });
 
-const gallery = document.querySelector('.gallery-track');
-const cards = gallery.querySelectorAll('img');
+  galleryTrack.addEventListener("mouseup", () => {
+    isDown = false;
+    galleryTrack.classList.remove("active-drag");
+  });
+
+  galleryTrack.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - galleryTrack.offsetLeft;
+    const walk = (x - startX) * 2;
+    galleryTrack.scrollLeft = scrollLeft - walk;
+  });
+}
+
+const gallery = document.querySelector(".gallery-track");
+const cards = gallery.querySelectorAll("img");
 
 function updateTransforms() {
   const center = gallery.scrollLeft + gallery.offsetWidth / 2;
@@ -117,6 +119,42 @@ function updateTransforms() {
   });
 }
 
-gallery.addEventListener('scroll', updateTransforms);
-window.addEventListener('load', updateTransforms);
+gallery.addEventListener("scroll", updateTransforms);
+window.addEventListener("load", updateTransforms);
 
+const hoverWords = document.querySelectorAll(".hover-word");
+const hoverDisplay = document.getElementById("hover-display");
+
+hoverWords.forEach((word) => {
+  word.addEventListener("mouseenter", (e) => {
+    const type = word.getAttribute("data-type");
+    const content = word.getAttribute("data-content");
+
+    if (type === "image") {
+      hoverDisplay.innerHTML = `<img src="${content}" alt="Hover Image">`;
+    } else {
+      hoverDisplay.innerHTML = `<div style="color: #fff;">${content}</div>`;
+    }
+
+    hoverDisplay.style.display = "block";
+  });
+
+  word.addEventListener("mousemove", (e) => {
+    hoverDisplay.style.left = e.pageX + 20 + "px";
+    hoverDisplay.style.top = e.pageY + 20 + "px";
+  });
+
+  word.addEventListener("mouseleave", () => {
+    hoverDisplay.style.display = "none";
+  });
+
+  const silenceWord = document.getElementById("silence-word");
+
+  silenceWord.addEventListener("mouseenter", () => {
+    document.body.style.backgroundColor = silenceWord.getAttribute("data-bg");
+  });
+
+  silenceWord.addEventListener("mouseleave", () => {
+    document.body.style.backgroundColor = "#000"; // 或者你页面的默认背景色
+  });
+});

@@ -68,3 +68,44 @@ img {
   filter: brightness(1);
   z-index: 10;
 }
+
+.tech-list {
+  font-size: 1.2em;
+  color: #87cefa;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hover-word {
+  margin: 0 12px;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: #87cefa; /* 原始文字颜色 */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hover-word:hover {
+  color: #b0e0ff; /* 微微更亮的颜色 */
+  text-shadow: 0 0 8px rgba(135, 206, 250, 0.6); /* 柔和蓝光 */
+}
+
+body {
+  background-color: #000; /* 初始背景黑色 */
+  transition: background-color 0.5s ease;
+}
+
+#hover-display {
+  position: absolute;
+  display: none;
+  background: #111;
+  color: #fff;
+  border: 1px solid #87cefa;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 100;
+  font-size: 0.95em;
+  line-height: 1.4em;
+}
