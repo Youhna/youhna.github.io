@@ -85,12 +85,46 @@ main {
   padding: 10px;
   margin-top: 50px;
   margin-bottom:90px;
-  box-shadow: 0 0 20px rgba(184, 203, 209, 0.5);
-  transition: box-shadow 0.3s ease;
 }
 
-.video-section iframe:hover {
-  box-shadow: 0 0 30px #b8acd3;
+
+.video-section iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 395px;
+  border-radius: 14px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 90px;
+
+  /* 发光边框效果 */
+  box-shadow:
+    0 0 20px rgba(184, 203, 209, 0.5),
+    0 0 40px rgba(184, 203, 209, 0.3),
+    0 0 60px rgba(184, 203, 209, 0.2);
+
+  transition: box-shadow 0.4s ease;
+}
+
+@keyframes glowCycle {
+  0%   { box-shadow: 0 0 30px #87cefa; }   /* Light blue */
+  25%  { box-shadow: 0 0 30px #b8acd3; }   /* Lavender */
+  50%  { box-shadow: 0 0 30px #ffb6c1; }   /* Light pink */
+  75%  { box-shadow: 0 0 30px #a0ffcc; }   /* Mint */
+  100% { box-shadow: 0 0 30px #87cefa; }
+}
+
+.video-section iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 395px;
+  border-radius: 14px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 90px;
+
+  animation: glowCycle 10s infinite ease-in-out;
+  transition: transform 0.3s ease;
 }
 
 /* === Timeline 主容器 === */

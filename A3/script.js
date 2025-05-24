@@ -122,6 +122,7 @@ function updateTransforms() {
 gallery.addEventListener("scroll", updateTransforms);
 window.addEventListener("load", updateTransforms);
 
+// ================== intro hover效果 ==================
 const hoverWords = document.querySelectorAll(".hover-word");
 const hoverDisplay = document.getElementById("hover-display");
 
