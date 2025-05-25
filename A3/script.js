@@ -1,10 +1,10 @@
-// ================== 页面加载后执行 ==================
+// ================== Executed after the page loads ==================
 document.addEventListener("DOMContentLoaded", () => {
-  revealTimelineItems(); // 初始加载就检测时间线可见性
-  initCarousel(); // 初始化扇形旋转画廊
+  revealTimelineItems(); // Check timeline visibility on initial load
+  initCarousel(); // Initialize the fan-shaped rotation gallery
 });
 
-// ================== 时间线滚动显现 ==================
+// ================== The scrolling of the timeline simulates the experience of "gradually exploring memories" and increases the sense of interactivity：https://b23.tv/0bR8cq1 ==================
 const timelineItems = document.querySelectorAll(".timeline-item");
 function isInViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -21,7 +21,7 @@ function revealTimelineItems() {
   });
 }
 
-// ================== 导航滚动高亮 + 平滑滚动 ==================
+// ================== Navigation scroll highlight + smooth scroll ==================
 const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
@@ -31,9 +31,9 @@ navLinks.forEach((link) => {
   });
 });
 window.addEventListener("scroll", () => {
-  revealTimelineItems(); // 滚动时检测时间线
+  revealTimelineItems(); // Update timeline chapters while scrolling
 
-  // 高亮当前导航
+  // Highlight current navigation
   const fromTop = window.scrollY + 80;
   navLinks.forEach((link) => {
     const section = document.querySelector(link.getAttribute("href"));
@@ -48,7 +48,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// ================== 视频自动播放控制 ==================
+// ================== Video autoplay control, do not automatically play upon entering the website, use the video button in the navigation bar, and consider the environment when the user is exploring the website ==================
 const videoFrame = document.getElementById("film");
 if (videoFrame) {
   const observer = new IntersectionObserver(
@@ -65,13 +65,13 @@ if (videoFrame) {
   observer.observe(videoFrame);
 }
 
-// ================== 横向拖拽滚动画廊 ==================
+// ================== Drag and scroll the gallery horizontally. Learning website: https://b23.tv/m5cV2yQ Encourage users to actively participate in exploration rather than passively accept content, and strengthen interactivity rather than just display. ==================
 const galleryTrack = document.querySelector(".gallery-track");
 if (galleryTrack) {
   let isDown = false;
   let startX;
   let scrollLeft;
-
+  // Start pulling
   galleryTrack.addEventListener("mousedown", (e) => {
     isDown = true;
     galleryTrack.classList.add("active-drag");
@@ -83,12 +83,12 @@ if (galleryTrack) {
     isDown = false;
     galleryTrack.classList.remove("active-drag");
   });
-
+  // Pause pulling
   galleryTrack.addEventListener("mouseup", () => {
     isDown = false;
     galleryTrack.classList.remove("active-drag");
   });
-
+  // Scroll while dragging
   galleryTrack.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
@@ -97,7 +97,7 @@ if (galleryTrack) {
     galleryTrack.scrollLeft = scrollLeft - walk;
   });
 }
-
+//  When you hold down the mouse and drag the track, you can scroll horizontally
 const gallery = document.querySelector(".gallery-track");
 const cards = gallery.querySelectorAll("img");
 
@@ -107,12 +107,14 @@ function updateTransforms() {
   cards.forEach((card) => {
     const cardCenter = card.offsetLeft + card.offsetWidth / 2;
     const distance = cardCenter - center;
-    const normalized = distance / card.offsetWidth; // 相对中心偏移
+    const normalized = distance / card.offsetWidth; // Relative center offset
 
-    let rotateY = Math.max(Math.min(normalized * 25, 45), -45); // 最大旋转45度
-    let scale = 1 - Math.min(Math.abs(normalized) * 0.1, 0.3); // 缩放范围：1 到 0.7
-    let zIndex = 100 - Math.abs(distance); // 中心高 z-index
+    let rotateY = Math.max(Math.min(normalized * 25, 45), -45); // Maximum rotation 45 degrees
+    let scale = 1 - Math.min(Math.abs(normalized) * 0.1, 0.3); // 
+    let zIndex = 100 - Math.abs(distance); // Center height
+    // When the gallery is scrolled, the cards are rotated (rotateY) and scaled (scale).
 
+    // Simulate the three-dimensional visual effect of a "rotating circular gallery" to enhance the artistic sense.
     card.style.transform = `rotateY(${rotateY}deg) scale(${scale})`;
     card.style.zIndex = Math.round(zIndex);
     card.style.filter = `brightness(${1 - Math.abs(normalized) * 0.3})`;
@@ -122,7 +124,7 @@ function updateTransforms() {
 gallery.addEventListener("scroll", updateTransforms);
 window.addEventListener("load", updateTransforms);
 
-// ================== intro hover效果 ==================
+// ================== Intro hover effect, add more interactive experience. Hovering over different words in the title triggers different pop-up effects of text or pictures. Explore more colors: When the mouse hovers over Silence, the background turns blue, and the color returns to normal when the mouse leaves.==================
 const hoverWords = document.querySelectorAll(".hover-word");
 const hoverDisplay = document.getElementById("hover-display");
 
@@ -156,6 +158,6 @@ hoverWords.forEach((word) => {
   });
 
   silenceWord.addEventListener("mouseleave", () => {
-    document.body.style.backgroundColor = "#000"; // 或者你页面的默认背景色
+    document.body.style.backgroundColor = "#000";
   });
 });

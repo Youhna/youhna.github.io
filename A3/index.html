@@ -6,14 +6,25 @@
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
+  <!-- I want to create an immersive, interactive website for my AI video. This video constructs a stream-of-consciousness space about reality, nothingness, and existentialism through poetic language and dream-like images. Therefore, I hope that the webpage is not only a display carrier, but also the entrance for the audience to enter this journey.
+      The main user interaction behaviors I chose are: (Scroll) and (Hover).
+      These two operations have the characteristics of "touch" and "fading", which can well convey the sense of "subconscious flow" in my video.
+      I hope that users will not browse a webpage, but "roam" in a consciousness space, and gradually discover the content through small actions such as scrolling and hovering, rather than obtaining information all at once.
+
+       I conceived the entire website as a five-chapter page structure:
+       Navigation bar, Introduction, Timeline of video content analysis, Gallery, and video playback area. -->
+
   <body>
+    <!-- Navigation bar: It can clearly indicate the website structure. Each navigation button will have a halo diffusion or text micro-vibration effect when the mouse hovers over it. It creates a stream of consciousness and a sense of fantasy. You can jump to different areas when you click. For example: when you click Gallery, you will jump to Gallery, and the area below the Gallery button on the navigation bar will light up to show your location. -->
+
     <nav>
       <a href="#intro" class="nav-link active">Introduction</a>
       <a href="#timeline" class="nav-link">Timeline</a>
       <a href="#gallery" class="nav-link">Gallery</a>
       <a href="#video" class="nav-link">Video</a>
     </nav>
-
+    <!-- Introduction: This is a transition area for the entire video. When I move the mouse to different areas, different production information and other supplementary content pop up to increase the sense of exploration. 
+         Hovering over different words will trigger a pop-up effect of text or images. -->
     <main>
       <section id="intro" class="intro">
         <h1 class="title">
@@ -23,7 +34,11 @@
             data-content="Reality: Echoes Carved in Silence is a 3-5 minute AI-generated stream-of-consciousness emotional short film that utilizes poetic language and dream-like images to create a stream-of-consciousness space about reality, nothingness, and existentialism. The short film will generate text, images, videos, and sounds through AI, and will eventually be edited into a complete work in Adobe Premiere Pro, aiming to provide an immersive experience for philosophy, art, and literature enthusiasts."
             >Reality</span
           >:
-          <span class="hover-word" data-type="image" data-content="img14.png">
+          <span
+            class="hover-word"
+            data-type="text"
+            data-content="Welcome to my world "
+          >
             Echoes
           </span>
 
@@ -43,10 +58,10 @@
           >
           <span
             class="hover-word"
-            data-type="text"
+            data-type="image"
             data-bg="#222831"
             id="silence-word"
-            data-content="Welcome to my world "
+            data-content="img14.png "
             >SILENCE</span
           >
         </h1>
@@ -61,7 +76,8 @@
       </section>
 
       <section id="timeline" class="timeline">
-        <!-- timeline items交替左右 -->
+        <!-- This is the core of the content, using vertical scrolling. Every time scroll a section, a chapter image and text emerge from both sides. 
+             The text of odd-numbered chapters is on the left, and the text of even-numbered chapters is on the right. -->
         <section class="timeline-item left" data-color="#111">
           <div class="text-side">
             <h2>Scene 1</h2>
@@ -151,6 +167,8 @@
         </section>
       </section>
 
+      <!-- Horizontal scrolling gallery: pictures are displayed in groups of three, and the pictures rotate slightly when scrolling. 
+           When the mouse hovers, the edges glow and the pictures are slightly enlarged. Hover -> Hierarchy -->
       <section class="scroll-gallery section" data-color="#1a1a1a" id="gallery">
         <h2 class="section-title">Gallery</h2>
         <div class="gallery-track">
@@ -164,7 +182,7 @@
           <img src="img8.png" alt="Scene 8" />
         </div>
       </section>
-
+      <!-- Video display area: embedded video player. It has pause, play, full screen, and mute functions. Since the video file is too large, the video is posted on the Video website. -->
       <section id="video" class="video-section" data-color="#000">
         <h2 class="section-title">Video</h2>
         <iframe
@@ -182,3 +200,18 @@
     <script src="script.js"></script>
   </body>
 </html>
+<!--
+The current design emphasizes immersive interaction and real-time feedback, such as the title words triggering image or color changes after hovering, horizontal drag-and-drop galleries, etc. 
+These elements work well on the page and provide reusable interaction mode templates for a wider range of projects.
+Focusing on the interaction method of visual feedback and user-initiated exploration, it provides a "poetic navigation experience" that is different from traditional web pages. 
+This experience can be extended to many fields such as exhibition introductions, official websites of independent artists, and experimental video works, providing users with a deeper perception path.
+But the overall interface feels not creative enough, and the interactive effect seems to be somewhat repetitive and monotonous. 
+In addition to watching videos and reading content, users should not browse repeatedly many times. When exploring my interactive website, users should spend the most time reading. How to increase derivative content or fun will be a big challenge.
+
+Future expansion:
+
+Add AI-generated voice as hover feedback;
+
+Add more animation interaction effects;
+
+The background color can also be changed to gradient or automatic change to enhance the sense of dream flow. -->

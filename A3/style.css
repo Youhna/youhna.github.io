@@ -1,11 +1,11 @@
-/* === 基础设置 === */
+/* === Basic settings: cold tones + dark background + frosted glass effect, creating a mysterious, dreamy, and slow-browsing atmosphere. === */
 body {
   background: #0a0a0a;
   color: #eee;
   overflow-x: hidden;
 }
 
-/* === 导航栏 nav === */
+/* === Navigation bar=== */
 nav {
   position: fixed;
   top: 0;
@@ -39,7 +39,7 @@ nav a:hover {
   border-bottom: 2px solid #6fc3df;
 }
 
-/* === 主内容区域 === */
+/* === main area === */
 main {
   padding-top: 100px;
   max-width: 900px;
@@ -84,10 +84,8 @@ main {
   border-radius: 14px;
   padding: 10px;
   margin-top: 50px;
-  margin-bottom:90px;
+  margin-bottom: 90px;
 }
-
-
 .video-section iframe {
   width: 100%;
   max-width: 700px;
@@ -97,21 +95,29 @@ main {
   margin-top: 50px;
   margin-bottom: 90px;
 
-  /* 发光边框效果 */
-  box-shadow:
-    0 0 20px rgba(184, 203, 209, 0.5),
-    0 0 40px rgba(184, 203, 209, 0.3),
-    0 0 60px rgba(184, 203, 209, 0.2);
+  /* Glowing border effect, explore more colors, enrich the experience, refer to ChatGPT*/
+  box-shadow: 0 0 20px rgba(184, 203, 209, 0.5),
+    0 0 40px rgba(184, 203, 209, 0.3), 0 0 60px rgba(184, 203, 209, 0.2);
 
   transition: box-shadow 0.4s ease;
 }
 
 @keyframes glowCycle {
-  0%   { box-shadow: 0 0 30px #87cefa; }   /* Light blue */
-  25%  { box-shadow: 0 0 30px #b8acd3; }   /* Lavender */
-  50%  { box-shadow: 0 0 30px #ffb6c1; }   /* Light pink */
-  75%  { box-shadow: 0 0 30px #a0ffcc; }   /* Mint */
-  100% { box-shadow: 0 0 30px #87cefa; }
+  0% {
+    box-shadow: 0 0 30px #87cefa;
+  } /* Light blue */
+  25% {
+    box-shadow: 0 0 30px #b8acd3;
+  } /* Lavender */
+  50% {
+    box-shadow: 0 0 30px #ffb6c1;
+  } /* Light pink */
+  75% {
+    box-shadow: 0 0 30px #a0ffcc;
+  } /* Mint */
+  100% {
+    box-shadow: 0 0 30px #87cefa;
+  }
 }
 
 .video-section iframe {
@@ -127,7 +133,7 @@ main {
   transition: transform 0.3s ease;
 }
 
-/* === Timeline 主容器 === */
+/* === Timeline container === */
 .timeline {
   position: relative;
   margin: 4rem 0 5rem;
@@ -148,7 +154,7 @@ main {
   z-index: 0;
 }
 
-/* === 时间线节点 === */
+/* === Timeline nodes, even and odd pictures and texts appear alternately on the left and right sides Left and right staggered timeline layout=== */
 .timeline-item {
   position: relative;
   display: flex;
@@ -198,7 +204,7 @@ main {
   margin-left: 50px;
 }
 
-/* === 时间线图片 === */
+/* === Timeline img === */
 .image-side {
   flex-shrink: 0;
   width: 200px;
@@ -227,7 +233,7 @@ main {
   filter: brightness(1);
 }
 
-/* === 时间线节点圆点 === */
+/* === Timeline node dots === */
 .timeline-item::after {
   content: "";
   position: absolute;
@@ -243,7 +249,7 @@ main {
   pointer-events: none;
 }
 
-/* === 响应式 === */
+/* === Responsive layout === */
 @media (max-width: 768px) {
   .timeline-item {
     flex-direction: column !important;

@@ -1,4 +1,4 @@
-/* reset.css */
+/* In terms of overall visual, I chose cold colors + dark background + frosted glass effect to create a mysterious, dreamy, and slow browsing atmosphere.*/
 *,
 *::before,
 *::after {
@@ -23,7 +23,7 @@ img {
   user-select: none;
 }
 
-/* === Scroll Gallery === */
+/* === Scroll Gallery, text and images should be a certain distance away from the center line === */
 
 .section-title {
   font-size: 2.8rem;
@@ -61,7 +61,7 @@ img {
   will-change: transform;
   cursor: pointer;
 }
-
+/* The edge flashes slightly when hovering */
 .gallery-track img:hover {
   transform: scale(1.08) translateY(-4px);
   box-shadow: 0 0 28px #9e8dffcc;
@@ -81,17 +81,17 @@ img {
   cursor: pointer;
   position: relative;
   text-decoration: none;
-  color: #87cefa; /* 原始文字颜色 */
+  color: #87cefa; /* Original text color */
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .hover-word:hover {
-  color: #b0e0ff; /* 微微更亮的颜色 */
-  text-shadow: 0 0 8px rgba(135, 206, 250, 0.6); /* 柔和蓝光 */
+  color: #b0e0ff; /* Slightly brighter color */
+  text-shadow: 0 0 8px rgba(135, 206, 250, 0.6); /* Soft blue light */
 }
 
 body {
-  background-color: #000; /* 初始背景黑色 */
+  background-color: #000; /* Initial background black */
   transition: background-color 0.5s ease;
 }
 
@@ -104,7 +104,7 @@ body {
   border-radius: 8px;
   padding: 10px;
   max-width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 100;
   font-size: 0.95em;
   line-height: 1.4em;
