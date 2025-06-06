@@ -65,7 +65,8 @@ if (videoFrame) {
   observer.observe(videoFrame);
 }
 
-// ================== Drag and scroll the gallery horizontally. Learning website: https://b23.tv/m5cV2yQ Encourage users to actively participate in exploration rather than passively accept content, and strengthen interactivity rather than just display. ==================
+// ================== Drag and scroll the gallery horizontally. Learning website: https://b23.tv/m5cV2yQ 
+// Encourage users to actively participate in exploration rather than passively accept content, and strengthen interactivity rather than just display. ==================
 const galleryTrack = document.querySelector(".gallery-track");
 if (galleryTrack) {
   let isDown = false;
@@ -124,7 +125,8 @@ function updateTransforms() {
 gallery.addEventListener("scroll", updateTransforms);
 window.addEventListener("load", updateTransforms);
 
-// ================== Intro hover effect, add more interactive experience. Hovering over different words in the title triggers different pop-up effects of text or pictures. Explore more colors: When the mouse hovers over Silence, the background turns blue, and the color returns to normal when the mouse leaves.==================
+// ================== Intro hover effect, add more interactive experience. Hovering over different words in the title triggers different pop-up effects of text or pictures. 
+// Explore more colors: When the mouse hovers over Silence, the background turns blue, and the color returns to normal when the mouse leaves.==================
 const hoverWords = document.querySelectorAll(".hover-word");
 const hoverDisplay = document.getElementById("hover-display");
 
